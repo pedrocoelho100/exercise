@@ -1,0 +1,9 @@
+.footer-container {
+    margin-top: 3rem;
+    border-top: 2px solid #d3d3d3;
+}
+
+.copyright-text {
+    padding: 1rem;
+    text-align: center;
+}

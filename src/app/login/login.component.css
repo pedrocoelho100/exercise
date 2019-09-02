@@ -1,0 +1,17 @@
+.title-wrapper {
+    margin-top: 3rem;
+}
+
+.title {
+    text-align: center;
+}
+
+.login-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.login-button:focus {
+    outline: none;
+    border: none;
+}

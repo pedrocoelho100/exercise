@@ -1,0 +1,53 @@
+<app-header></app-header>
+<breadcrumb></breadcrumb>
+
+<div class="user-detail-container">
+  <div class="row">
+    <mat-tab-group class="col-sm-12">
+      <mat-tab label="Tab A">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Main Properties
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <p>
+              (Fields of each user)
+            </p>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Additional information
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <p>
+              Some additional information.
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-tab>
+
+      <mat-tab label="Tab B">
+        <ngx-charts-bar-vertical-2d
+        class="chart-container"
+        [results]="chartData"
+        [view]="[700, 300]"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="xAxis"
+        [yAxisLabel]="yAxis"
+        [xAxis]="true"
+        [yAxis]="true"></ngx-charts-bar-vertical-2d>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
