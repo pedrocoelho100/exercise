@@ -1,22 +1,25 @@
-.data-container {
-    padding: 2rem;
-}
-  
-h4 {
-    padding: 2rem;
-}
-  
-.data-container {
+.user-list-container {
     padding: 2rem;
 }
 
-table {
+.user-list-container h4 {
+    padding: 2rem;
+}
+
+.user-list-container .data-container {
+    padding: 2rem;
+}
+
+.user-list-container .data-container table {
     width: 100%;
 }
 
-.total-records {
+.user-list-container .data-container table .material-icons {
+    cursor: pointer;
+}
+
+.user-list-container .data-container .total-records {
     text-align: right;
-    font-size: 8 px;
     margin-right: 1rem;
-    color: rgba(0,0,0,.8);
-  }
+    color: rgba(0, 0, 0, .8);
+}

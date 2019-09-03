@@ -1,10 +1,27 @@
 .header-container {
-    border-bottom: 2px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
 }
+
+.menu-links {
+    height: 50%;
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem;
+    align-items: end;
+}
+
+.menu-links .menu-link {
+    display: inline-block;
+    padding: 1rem;
+    border: 2px solid #ffffff;
+    align-items: end;
+}  
 
 .header-container .user-info .user {
     height: 100%;
     position: relative;
     display: flex;
     justify-content: flex-end;
+    align-items: end;
+    text-align: right;
 }
