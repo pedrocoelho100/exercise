@@ -2,6 +2,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {SelectionModel} from '@angular/cdk/collections';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -10,23 +12,18 @@ import {SelectionModel} from '@angular/cdk/collections';
 })
 export class UserListComponent implements OnInit {
 
-  userData = [
-    { name: 'John', age: '28', city: 'Dallas', hobby: 'football' },
-    { name: 'Maria', age: '36', city: 'Lisbon', hobby: 'music' },
-    { name: 'Chris', age: '22', city: 'California', hobby: 'music' },
-    { name: 'Samantha', age: '26', city: 'Paris', hobby: 'TV series' },
-    { name: 'Sara', age: '43', city: 'New York', hobby: 'running' },
-    { name: 'Steve', age: '31', city: 'Liverpool', hobby: 'football' },
-    { name: 'Ethan', age: '27', city: 'Los Angeles', hobby: 'basketball' }
-  ];
-
   selection = new SelectionModel(true, []);
-  displayedColumns: string[] = ['select', 'name', 'age', 'city', 'hobby', 'details'];
-  dataSource = new MatTableDataSource(this.userData);
+  displayedColumns: string[] = ['select', 'name', 'username', 'email', 'details'];
+  dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
+  constructor(private httpClient: HttpClient, private router:Router) {}
+
   ngOnInit() {
+    this.httpClient.get('https://jsonplaceholder.typicode.com/users').subscribe((response:any) => {
+      this.dataSource.data = response;
+    });
     this.dataSource.paginator = this.paginator;
   }
 
@@ -57,4 +54,10 @@ export class UserListComponent implements OnInit {
     }
   }
 
+  onDetail(item) {
+    debugger;
+    console.log(item);
+    this.router.navigate(['/user/user-details'], { queryParams: { 'id': item.id } });
+  }
+  
 }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { UserListComponent } from './user/user-list/user-list.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { BarChartModule } from '@swimlane/ngx-charts';
 import { BreadcrumbModule } from 'angular-crumbs';
 
@@ -46,7 +47,8 @@ import { BreadcrumbModule } from 'angular-crumbs';
     MatTabsModule,
     MatExpansionModule,
     BarChartModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    HttpClientModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

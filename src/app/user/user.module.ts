@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 import { UserListComponent } from './user-list/user-list.component';
 import { HeaderComponent } from '../header/header.component';
-import { UserDetailsComponent } from '../user-details/user-details.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -29,7 +30,8 @@ import { BreadcrumbModule } from 'angular-crumbs';
     FormsModule,
     MatInputModule,
     BarChartModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }

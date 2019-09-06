@@ -1,25 +1,25 @@
 .user-list-container {
-    padding: 2rem;
+    padding: 1rem;
 }
 
-.user-list-container h4 {
-    padding: 2rem;
+h4 {
+    padding: 1rem;
 }
 
-.user-list-container .data-container {
-    padding: 2rem;
+.data-container {
+    padding: 1rem;
 }
 
-.user-list-container .data-container table {
+table {
     width: 100%;
 }
 
-.user-list-container .data-container table .material-icons {
+.material-icons {
     cursor: pointer;
 }
 
-.user-list-container .data-container .total-records {
+.total-records {
     text-align: right;
     margin-right: 1rem;
-    color: rgba(0, 0, 0, .8);
+    color: rgba(0, 0, 0, .4);
 }

@@ -1,0 +1,67 @@
+<app-header></app-header>
+<breadcrumb></breadcrumb>
+
+<div class="user-detail-container">
+  <div class="row">
+    <mat-tab-group class="col-sm-12">
+      <mat-tab label="Tab A">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Main Properties
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ul class="user-data" *ngIf="hasDataLoaded">
+              <li class="data">Name: {{userData.name}}</li>
+              <br/>
+              <li class="data">Username: {{userData.username}}</li>
+              <br/>
+              <li class="data">Address: 
+                <div>{{userData.address.street}},</div>
+                <div>{{userData.address.suite}},</div>
+                <div>{{userData.address.city}},</div>
+                <div>{{userData.address.zipcode}}</div>
+              </li>
+              <br/>
+              <li class="data">Phone: {{userData.phone}}</li>
+            </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Additional Information
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ul class="user-additional-data" *ngIf="hasDataLoaded">
+              <li class="data">Website: {{userData.website}}</li>
+              <br/>
+              <li class="data">Company: {{userData.company.name}}</li>
+            </ul>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-tab>
+
+      <mat-tab label="Tab B">
+        <ngx-charts-bar-vertical-2d
+        class="chart-container"
+        [results]="chartData"
+        [view]="[700, 300]"
+        [legend]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="xAxis"
+        [yAxisLabel]="yAxis"
+        [xAxis]="true"
+        [yAxis]="true"></ngx-charts-bar-vertical-2d>
+      </mat-tab>
+      
+    </mat-tab-group>
+  </div>
+</div>
